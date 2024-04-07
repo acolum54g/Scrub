@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="QEMU"
+        app:icon="@drawable/ic_qemu">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="X86_64"
+            android:entries="@array/vmArchLabels"
+            android:entryValues="@array/vmArchValues"
+            android:key="vmArch"
+            android:title="VM ARCH"
+            app:icon="@drawable/ic_arch"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="qemu64"
+            android:entries="@array/cpuLabels"
+            android:entryValues="@array/cpuValues"
+            android:key="cpu"
+            android:title="CPU MODEL"
+            app:icon="@drawable/round_memory_24"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="customMemory"
+            android:title="CUSTOM MEMORY"
+            app:icon="@drawable/round_build_24" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="512"
+            android:inputType="number"
+            android:key="memory"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="MEMORY (MB)"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/round_memory_24" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="None"
+            android:entries="@array/soundCardLabels"
+            android:entryValues="@array/soundCardValues"
+            android:key="soundCard"
+            android:title="SOUND CARD"
+            app:isPreferenceVisible="false"
+            app:icon="@drawable/round_volume_up_24"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="2048"
+            android:inputType="number"
+            android:key="TbSize"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="TB SIZE (KB)"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/ic_t" />
+        <SwitchPreferenceCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="AVX"
+            android:title="AVX"
+            app:icon="@drawable/ic_a" />
+        <SwitchPreferenceCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="MTTCG"
+            android:title="MTTCG"
+            android:summary="multi tcg acceleration"
+            app:icon="@drawable/ic_mttcg" />
+        <SwitchPreferenceCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="kvm"
+            android:summary="kvm acceleration"
+            android:title="KVM"
+            app:icon="@drawable/ic_kvm" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="2"
+            android:entries="@array/cpuCoresLabels"
+            android:entryValues="@array/cpuCoresValues"
+            android:key="cpuNum"
+            android:title="CPU CORES"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/round_hub_24" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="ide"
+            android:entries="@array/iftypeLabels"
+            android:entryValues="@array/iftypeValues"
+            android:title="HARDDISK TYPE"
+            android:key="ifType"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/round_dns_24" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="boot"
+            android:title="BOOT FROM"
+            android:entries="@array/bootLabels"
+            android:entryValues="@array/bootValues"
+            android:defaultValue="c"
+            app:icon="@drawable/ic_b"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:title="SHARED FOLDER"
+            android:key="sharedFolder"
+            android:summary="/Documents/VectrasVM/SharedFolder/"
+            app:icon="@drawable/round_folder_24" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue=""
+            android:inputType="text"
+            android:key="customParams"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="CUSTOM PARAMS"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/round_terminal_24" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="VM UI ENVIRONMENT"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="VNC"
+            android:entries="@array/vmUiLabels"
+            android:entryValues="@array/vmUiValues"
+            android:key="vmUi"
+            android:title="UI"
+            app:isPreferenceVisible="false"
+            app:useSimpleSummaryProvider="true"
+            app:icon="@drawable/computer"/>
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="mouse"
+            android:title="MOUSE"
+            android:defaultValue="usb-mouse"
+            android:entries="@array/mouseLabels"
+            android:entryValues="@array/mouseValues"
+            app:icon="@drawable/round_mouse_24"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="keyboard"
+            android:title="KEYBOARD"
+            android:defaultValue="usb-kbd"
+            android:entries="@array/keyboardLabels"
+            android:entryValues="@array/keyboardValues"
+            app:icon="@drawable/round_keyboard_24"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+</PreferenceScreen>
